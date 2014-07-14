@@ -12,16 +12,16 @@
 	<table class="table">
         <sf:form method="post">
                 <tr>
-                    <th><label for="name">Name:</label></th>
-                    <th><input name="name" id="name" value="${position.name}" disabled="true"/></th>
+                    <td><label for="name">Name:</label></td>
+                    <td><input name="name" id="name" value="${position.name}" disabled="true"/></td>
                 </tr>
                 <tr>
-                    <th><label for="price">Price:</label></th>
-                    <th><input name="price" id="price" value="${position.price}" disabled="true" /></th>
+                    <td><label for="price">Price:</label></td>
+                    <td><input name="price" id="price" value="${position.price}" disabled="true" /></td>
                 </tr>
                 <tr>
-                    <th><input type="button" value="Unlock" id="unlock" /></th>
-                    <th><input type="submit" value="Save" id="save" class="hidden" /></th>
+                    <td><input type="button" value="Edit" id="edit" class="btn btn-primary btn-sm"/></td>
+                    <td><input type="submit" value="Save" id="save" class="hidden" /></td>
                 </tr>
         </sf:form>
 	</table>
@@ -33,8 +33,8 @@
     <script src="/invoices/resources/jquery-1.11.1.js"></script>
     <script>
         (function() {
-            $("#unlock").on("click", function() {
-                $("#unlock").addClass("hidden");
+            $("#edit").on("click", function() {
+                $("#edit").addClass("hidden");
  
                 // enable stuff
                 $("#name").removeAttr("disabled");

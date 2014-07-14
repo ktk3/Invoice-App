@@ -18,14 +18,20 @@
             <th>Id</th>
             <th>Buyer</th>
             <th>Seller</th>
-	    <th>Details</th>
+            <th>Positions</th>
+	        <th>Details</th>
             <th>Delete</th>
         </tr>
         <c:forEach items="#{invoices}" var="poz">
             <tr>
                 <td>${poz.id}</td>
                 <td>${poz.buyer}</td>
-		<td>${poz.seller}</td>
+		        <td>${poz.seller}</td>
+                <td>
+                    <c:forEach items="${poz.positions}" var="ppos">
+                        <a href="/invoices/positions/${ppos.id}">${ppos.name}</a><br>
+                    </c:forEach>
+                </td>
                 <td>
                     <a href="invoices/${poz.id}">Go to page</a>
                 </td>
