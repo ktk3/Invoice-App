@@ -11,8 +11,8 @@
 	<h1>Welcome to the Invoices App on Spring!</h1>
 
 	<ul>
-		<li><a href="positions">List positions</a></li>
-		<li><a href="invoices">List invoices</a></li>
+		<li><a href="positions" class="btn btn-default btn-lg">List positions</a></li>
+		<li><a href="invoices" class="btn btn-default btn-lg">List invoices</a></li>
 	</ul>
 
 	Today is: <fmt:formatDate value="${today}" pattern="dd-MM-yyyy" />

@@ -25,7 +25,7 @@
                 <td>${poz.name}</td>
                 <td>${poz.price}</td>
                 <td>
-                    <a href="positions/${poz.id}">Go to page</a>
+                    <a href="positions/${poz.id}" class="btn btn-default">Go to page</a>
                 </td>
                 <td>
                     <sf:form action="positions/${poz.id}" method="delete">

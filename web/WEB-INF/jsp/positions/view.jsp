@@ -20,8 +20,8 @@
                     <td><input name="price" id="price" value="${position.price}" disabled="true" /></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="Edit" id="edit" class="btn btn-primary btn-sm"/></td>
-                    <td><input type="submit" value="Save" id="save" class="hidden" /></td>
+                    <td><input type="button" value="Edit" id="edit" class="btn btn-primary"/></td>
+                    <td><input type="submit" value="Save" id="save" class="btn btn-primary hide"/></td>
                 </tr>
         </sf:form>
 	</table>
@@ -34,12 +34,12 @@
     <script>
         (function() {
             $("#edit").on("click", function() {
-                $("#edit").addClass("hidden");
+                $("#edit").addClass("hide");
  
                 // enable stuff
                 $("#name").removeAttr("disabled");
                 $("#price").removeAttr("disabled");
-                $("#save").removeClass("hidden");
+                $("#save").removeClass("hide");
             });
         })();
     </script>

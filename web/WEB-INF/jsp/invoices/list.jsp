@@ -33,7 +33,7 @@
                     </c:forEach>
                 </td>
                 <td>
-                    <a href="invoices/${poz.id}">Go to page</a>
+                    <a href="invoices/${poz.id}" class="btn btn-default">Go to page</a>
                 </td>
                 <td>
                     <sf:form action="invoices/${poz.id}" method="delete">

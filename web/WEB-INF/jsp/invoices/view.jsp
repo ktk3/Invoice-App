@@ -66,7 +66,7 @@
                     <tr>
                         <sf:form method="put" id="add-form">
                             <td>
-                                <select id="selected-pos">
+                                <select id="selected-pos" class="form-control">
                                     <c:forEach items="${unlisted}" var="upos">
                                         <option value="${upos.id}">
                                             ${upos.name}
@@ -88,8 +88,8 @@
                 </table>
             </tr>   
                 <tr>
-                    <td><input type="button" value="Edit" id="edit" class="btn btn-primary btn-sm"/></td>
-                    <td><input type="submit" value="Save" id="save" class="hidden" /></td>
+                    <td><input type="button" value="Edit" id="edit" class="btn btn-primary"/></td>
+                    <td><input type="submit" value="Save" id="save" class="btn btn-primary hide"/></td>
                 </tr>
                 
         </sf:form>
@@ -117,12 +117,12 @@
         })();
         (function() {
             $("#edit").on("click", function() {
-                $("#edit").addClass("hidden");
+                $("#edit").addClass("hide");
  
                 // enable stuff
                 $("#buyer").removeAttr("disabled");
                 $("#seller").removeAttr("disabled");
-                $("#save").removeClass("hidden");
+                $("#save").removeClass("hide");
 
             });
         })();

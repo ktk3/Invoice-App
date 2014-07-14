@@ -2,22 +2,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add new position</title>
+    <title>Add new invoice</title>
     <link href="/invoices/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Add new position</h2>
+    <h2>Add new invoice</h2>
     <div id="tabl" class="container">
     <table class="table">
-        <sf:form method="post" action="positions">
+        <sf:form method="post" action="invoices">
                 <tr>
-                    <th><label for="name">Name:</label></th>
-                    <th><input name="name" id="name" value="${position.name}"/></th>
+                    <th><label for="buyer">Buyer:</label></th>
+                    <th><input name="buyer" id="buyer" value="${invoice.buyer}"/></th>
                 </tr>
                 <tr>
-                    <th><label for="price">Price:</label></th>
-                    <th><input name="price" id="price"
-                           value="${position.price}" /></th>
+                    <th><label for="seller">Seller:</label></th>
+                    <th><input name="seller" id="seller"
+                           value="${invoice.seller}" /></th>
                 </tr>
                 <tr>
                     <th><input type="submit" value="Save" id="save" /></th>
@@ -28,6 +28,6 @@
     </div>
  
     <br /><br />
-    <a href="positions">Go Back</a>
+    <a href="invoices">Go Back</a>
 </body>
 </html>

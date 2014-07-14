@@ -38,6 +38,9 @@ public class Invoice {
 	public void addPosition(Position pos) {
 		positions.add(pos);
 	}
+	public void removePosition(Position pos) {
+		positions.remove(pos);		
+	}
 	
 	public void clearPositions() {
 		positions.clear();
@@ -100,7 +103,5 @@ public class Invoice {
 		return "Invoice [id=" + id + ", seller=" + seller + ", buyer=" + buyer
 				+ ", positions=" + positions + "]";
 	}
-	
-	
-	
+		
 }
