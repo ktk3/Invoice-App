@@ -9,6 +9,7 @@
     <packaging>war</packaging>
    
     <build>
+	<finalName>invoices</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

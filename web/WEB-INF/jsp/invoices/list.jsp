@@ -8,7 +8,6 @@
 <head>
     <title>Invoices</title>
     <link href="/invoices/resources/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body>
     <h1>List of invoices</h1>
@@ -16,17 +15,17 @@
     <div class="container">
     <table class="table table-striped">
         <tr>
-            <th>ID</th>
+            <th>Id</th>
             <th>Buyer</th>
-	    <th>Seller</th>
-            <th>Details</th>
+            <th>Seller</th>
+	    <th>Details</th>
             <th>Delete</th>
         </tr>
         <c:forEach items="#{invoices}" var="poz">
             <tr>
-		<td>${poz.id}</td>
+                <td>${poz.id}</td>
                 <td>${poz.buyer}</td>
-                <td>${poz.seller}</td>
+		<td>${poz.seller}</td>
                 <td>
                     <a href="invoices/${poz.id}">Go to page</a>
                 </td>

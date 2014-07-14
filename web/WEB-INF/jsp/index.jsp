@@ -5,6 +5,7 @@
 <html>
 <head>
 	<title>Invoices app opn Spring</title>
+	<link href="/invoices/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<h1>Welcome to the Invoices App on Spring!</h1>

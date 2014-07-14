@@ -6,13 +6,12 @@
  
 <html>
 <head>
-    <title>Pozycje</title>
+    <title>Positions</title>
     <link href="/invoices/resources/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body>
     <h1>List of positions</h1>
-    <input type="button" class="btn btn-primary btn-lg" value="Add new position" href="positions?new">
+    <input type="button" class="btn btn-primary btn-lg" value="Add new position" onclick="location.href='positions?new';">
     <div class="container">
     <table class="table table-striped">
         <tr>

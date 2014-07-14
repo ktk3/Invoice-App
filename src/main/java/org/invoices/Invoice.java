@@ -15,7 +15,7 @@ public class Invoice {
 	private String seller;
 	private String buyer;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "invoice_position", joinColumns = { @JoinColumn(name = "invoice_id") }, inverseJoinColumns = { @JoinColumn(name = "position_id") })
 	private List<Position> positions = new ArrayList<Position>();
 
@@ -37,6 +37,11 @@ public class Invoice {
 	
 	public void addPosition(Position pos) {
 		positions.add(pos);
+	}
+	
+	public void clearPositions() {
+		positions.clear();
+		
 	}
 	
 	public List<Position> getPositions() {
@@ -95,6 +100,7 @@ public class Invoice {
 		return "Invoice [id=" + id + ", seller=" + seller + ", buyer=" + buyer
 				+ ", positions=" + positions + "]";
 	}
+	
 	
 	
 }

@@ -22,7 +22,7 @@
 		<property name="driverClassName"
             value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" />
         <property name="url" value="jdbc:mysql://localhost/invoices" />
-        <property name="username" value="malybialy" />
+        <property name="username" value="kkrejszeff" />
         <property name="password" value="" />
     </bean>
     
