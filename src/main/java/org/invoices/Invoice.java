@@ -76,63 +76,16 @@ public class Invoice {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-System.out.println("DUUUUUUPAAAAAAA");
-
-
 		if (obj == null)
 			return false;
-System.out.println("1: " + this.hashCode());
-System.out.println("2: " + obj.hashCode());
 		if (getClass() != obj.getClass())
 			return false;
 		Invoice other = (Invoice) obj;
-System.out.println("3: " + other.hashCode());
-
-		if (buyer == null) {
-			if (other.buyer != null){
-				System.out.println("buyers 1");
-				return false;
-
-			}
-		} else if (!buyer.equals(other.buyer)){
-			System.out.println("buyers 2");
-			System.out.println(this.buyer);
-			System.out.println(other.buyer);
-			return false;
-		}
 		if (id == null) {
 			if (other.id != null){
-				System.out.println("id 1");
 				return false;
 			}
 		} else if (!id.equals(other.id)){
-			System.out.println("id 2");
-			return false;
-		}
-		if (positions == null) {
-			if (other.positions != null){
-				
-				System.out.println("positions 1");
-				return false;
-			}
-		} else if (positions.isEmpty()) {
-			if (!other.positions.isEmpty()){
-				System.out.println("positions 2");
-				return false;
-			}
-		} else if (!positions.equals(other.positions)){
-			System.out.println("positions 3");
-			System.out.println(this.toString());
-			System.out.println(other.toString());
-			return false;
-		}
-		if (seller == null) {
-			if (other.seller != null){
-				System.out.println("seller 1");
-				return false;
-			}
-		} else if (!seller.equals(other.seller)){
-			System.out.println("seller 2");	
 			return false;
 		}
 		return true;
