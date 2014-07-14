@@ -60,13 +60,6 @@ public class Position {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (price != other.price)
-			return false;
 		return true;
 	}
 	@Override
