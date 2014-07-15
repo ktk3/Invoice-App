@@ -112,7 +112,7 @@
  
             function setAddAction() {
                 var id = $("#selected-pos").val();
-                $("#add-form").attr("action", "${invoice.id}/invoices/" + id);
+                $("#add-form").attr("action", "${invoice.id}/positions/" + id);
             }
         })();
         (function() {

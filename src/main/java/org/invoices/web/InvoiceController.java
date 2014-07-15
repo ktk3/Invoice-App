@@ -67,14 +67,6 @@ public class InvoiceController {
 	    invoiceDao.update(inv);
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public String deleteInvoice(@PathVariable("id") long id) {
-	 
-	    Invoice toDelete = invoiceDao.find(id);
-	    invoiceDao.remove(toDelete);
-	    return "redirect:/invoices";
-	}
-	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public String getInvoice(@PathVariable("id") long id, Model model) {
 	    Invoice inv = invoiceDao.find(id);
@@ -128,6 +120,13 @@ public class InvoiceController {
 	    inv.setId(id);
 	    invoiceDao.update(inv);
 	 
+	    return "redirect:/invoices";
+	}
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public String deleteInvoice(@PathVariable("id") long id) {
+	 
+	    Invoice toDelete = invoiceDao.find(id);
+	    invoiceDao.remove(toDelete);
 	    return "redirect:/invoices";
 	}
 }
