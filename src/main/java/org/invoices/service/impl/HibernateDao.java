@@ -50,8 +50,12 @@ public class HibernateDao<E, K extends Serializable>  implements GenericDao<E, K
 		return (E) currentSession().get(daoType, key);
 	}
 
-	public List<E> list() {
+	public List<E> list(int pageIndex, int pageSize) {
 		return currentSession().createCriteria(daoType).list();
+	}
+	
+	public long count(){
+		return 0;
 	}
 
 }

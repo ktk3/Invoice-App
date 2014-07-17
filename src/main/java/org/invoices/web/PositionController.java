@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import org.invoices.Position;
@@ -35,10 +36,16 @@ public class PositionController {
     }
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String showPositions(Model model){
-		List <Position> positions = positionDao.list();
+	public String showPositions(@RequestParam(required = false) final Integer page, Model model){
+		int index = (page == null ? 0 : page);
+		List <Position> positions = positionDao.list(index,5);
 		model.addAttribute("positions", positions);
-		
+		model.addAttribute("has_prev", (index == 0  ? 0 : 1));
+		long pages = positionDao.count();
+		pages = pages / 5 + ((pages % 5) == 0  ? 0 : 1);
+		model.addAttribute("has_next", (index < pages - 1  ? 1 : 0));
+		model.addAttribute("next_page", index + 1);
+		model.addAttribute("prev_page", index - 1);
 		return "positions/list";
 	}
 	

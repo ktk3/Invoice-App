@@ -28,11 +28,6 @@
                 <td>${poz.buyer}</td>
 		        <td>${poz.seller}</td>
                 <td>
-                    <c:forEach items="${poz.positions}" var="ppos">
-                        <a href="/invoices/positions/${ppos.id}">${ppos.name}</a><br>
-                    </c:forEach>
-                </td>
-                <td>
                     <a href="invoices/${poz.id}" class="btn btn-default">Go to page</a>
                 </td>
                 <td>

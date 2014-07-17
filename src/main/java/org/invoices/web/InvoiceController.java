@@ -45,7 +45,8 @@ public class InvoiceController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String showInvoices(Model model){
-		List <Invoice> invoices = invoiceDao.list();
+		
+		List <Invoice> invoices = invoiceDao.list(0, 5);
 		model.addAttribute("invoices", invoices);
 		return "invoices/list";
 	}
@@ -71,7 +72,7 @@ public class InvoiceController {
 	public String getInvoice(@PathVariable("id") long id, Model model) {
 	    Invoice inv = invoiceDao.find(id);
 	    model.addAttribute("invoice", inv);
-	    List <Position> positions = positionDao.list();
+	    List <Position> positions = positionDao.list(0,5);
 	    Set<Position> unlisted = new HashSet<Position>();
 	    for (Position pos : positions){
 	    	if (!inv.getPositions().contains(pos))

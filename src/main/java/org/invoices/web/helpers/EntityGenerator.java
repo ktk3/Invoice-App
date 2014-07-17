@@ -48,15 +48,19 @@ public final class EntityGenerator {
 	}
 	
 	public void deleteDomain(){
-				
-		List<Invoice> invoices = invoiceDao.list();
-		for (Invoice f : invoices){
-			invoiceDao.remove(f);
+		List<Invoice> invoices = invoiceDao.list(0,100);
+		while(!invoices.isEmpty()){	
+			for (Invoice f : invoices){
+				invoiceDao.remove(f);
+			}
+			invoices = invoiceDao.list(0,10);
 		}
-		
-		List<Position> pozycje = positionDao.list();
-		for (Position poz : pozycje){
-			positionDao.remove(poz);
+		List<Position> positions = positionDao.list(0, 100);
+		while(!positions.isEmpty()){	
+			for (Position poz : positions){
+				positionDao.remove(poz);
+			}
+			positions= positionDao.list(0, 100);
 		}
 	}
 	

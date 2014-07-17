@@ -26,10 +26,10 @@ public class PositionDaoTest extends DomainAwareBase{
 	
 	@Test
 	public void testAdd(){
-		int size = positionDao.list().size();
+		int size = positionDao.list(0,100).size();
 		positionDao.add(new Position("test-position", 150));
 		
-		assertTrue(size < positionDao.list().size());
+		assertTrue(size < positionDao.list(0,100).size());
 	}
 	
 	@Test
@@ -45,7 +45,7 @@ public class PositionDaoTest extends DomainAwareBase{
 	
 	@Test
 	public void testList(){
-		assertEquals(0, positionDao.list().size());
+		assertEquals(0, positionDao.list(0,100).size());
 		
 		List<Position> poz = Arrays.asList(
 				new Position("name1", 50),
@@ -55,7 +55,7 @@ public class PositionDaoTest extends DomainAwareBase{
 			positionDao.add(p);
 		}
 		
-		List<Position> found = positionDao.list();
+		List<Position> found = positionDao.list(0,100);
 		assertEquals(3, found.size());
 		for(Position p : found){
 			assertTrue(poz.contains(p));

@@ -12,6 +12,8 @@ public interface GenericDao<E, K> {
      
     E find(K key);
      
-    List<E> list();
+    List<E> list(int pageIndex, int pageSize);
+    
+    public long count();
      
 }

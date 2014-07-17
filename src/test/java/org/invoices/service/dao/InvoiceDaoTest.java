@@ -27,12 +27,12 @@ public class InvoiceDaoTest extends DomainAwareBase {
  
     @Test
     public void testAdd() {
-        int size = invoiceDao.list().size();
+        int size = invoiceDao.list(0,100).size();
  
         Invoice inv = newSpringInvoice();
         invoiceDao.add(inv);
  
-        assertTrue(size < invoiceDao.list().size());
+        assertTrue(size < invoiceDao.list(0,100).size());
     }
  
     @Test
@@ -58,7 +58,7 @@ public class InvoiceDaoTest extends DomainAwareBase {
      
     @Test
     public void testList() {
-        assertEquals(0, invoiceDao.list().size());
+        assertEquals(0, invoiceDao.list(0,100).size());
         Invoice templateInvoice = newSpringInvoice();
          
         List<Invoice> invoices = Arrays.asList(
@@ -70,7 +70,7 @@ public class InvoiceDaoTest extends DomainAwareBase {
             invoiceDao.add(inv);
         }
  
-        List<Invoice> found = invoiceDao.list();
+        List<Invoice> found = invoiceDao.list(0,100);
         assertEquals(3, found.size());
         for (Invoice f : found) {
             assertTrue(invoices.contains(f));

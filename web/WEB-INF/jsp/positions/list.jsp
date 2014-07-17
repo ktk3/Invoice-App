@@ -34,9 +34,30 @@
                 </td>
             </tr>
         </c:forEach>
+	<tr>
+		<td></td>
+		<td><div id="has_p"><a href="positions?page=${prev_page}">Previous </a></div></td>
+		<td><div id="has_n"><a href="positions?page=${next_page}">Next</a></div></td>
+		<td></td>
+	</tr>
     </table>
     </div>
     <br />
     <a href="welcome">Go back</a>
 </body>
+<script type="text/javascript">
+window.onload = function() {
+var has_next = ${has_next};
+var has_prev = ${has_prev};
+
+console.log(has_next);
+console.log(has_prev);
+if (has_next == 0) {
+  document.getElementById("has_n").style.display = 'none';
+}
+if (has_prev == 0) {
+  document.getElementById("has_p").style.display = 'none';
+}
+ }
+</script>
 </html>
